@@ -7,7 +7,13 @@ const getSchema = (): ISchema => {
         type: 'object',
         properties: {
             name: {
-                type: 'picker',
+                type: 'object',
+                'x-component': 'block',
+                properties: {
+                    age: {
+                        type: 'picker',
+                    }
+                }
             }
         }
     }

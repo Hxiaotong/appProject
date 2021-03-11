@@ -8,7 +8,7 @@ interface HuxFormProps {
 const FormItem = (props: HuxFormProps) => {
     const { children } = props
     return (
-        <div>{children}</div>
+        <div className="Hux-form-item">{children}</div>
     )
 }
 

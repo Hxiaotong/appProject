@@ -1,3 +1,19 @@
 {
-  "extends": "eslint-config-umi"
+  "parser": "@typescript-eslint/parser", // 将 TypeScript 转换成与 estree 兼容的形式，以便在ESLint中使用。
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    //指定ESLint可以解析JSX语法
+    "ecmaVersion": 2019, // (same as ES10)
+    "sourceType": "module", // 如果你的代码是 ECMAScript 模块)
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
 }

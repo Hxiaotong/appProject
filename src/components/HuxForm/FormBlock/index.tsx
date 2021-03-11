@@ -1,10 +1,12 @@
-// FormItem 控制表单局部样式
 import React from 'react'
 import './index.scss'
+interface HuxFormBlockProps {
+    children: any
+}
 
-const FromBlock = () => {
+const FromBlock = (props: HuxFormBlockProps ) => {
     return (
-        <div></div>
+        <div className="Hux-form-block">    {props.children}888777888</div>
     )
 }
 
