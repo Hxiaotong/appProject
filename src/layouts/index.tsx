@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './index.css';
+import './index.scss';
 
 const BasicLayout: React.FC = props => {
   return (
-    <div className={styles.normal}>
+    <div>
       {props.children}
     </div>
   );

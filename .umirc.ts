@@ -1,4 +1,6 @@
 import { IConfig } from 'umi-types';
+import pxToViewPort from 'postcss-px-to-viewport';
+
 const BundleAnalyzerPlugin = require('umi-webpack-bundle-analyzer').BundleAnalyzerPlugin;
 new BundleAnalyzerPlugin()
 // ref: https://umijs.org/config/
@@ -8,6 +10,14 @@ const config: IConfig =  {
       .plugin("umi-webpack-bundle-analyzer")
       .use(new BundleAnalyzerPlugin());
   },
+  disableCSSModules: true,
+  extraPostCSSPlugins: [
+    pxToViewPort({
+      viewportWidth: 750, // 设计图宽度
+      viewportHeight: 1334, // 设计图高度
+      exclude: /(\/|\\)(node_modules)(\/|\\)/,
+    }),
+  ],
   base: 'myapp',
   treeShaking: true,
   plugins: [

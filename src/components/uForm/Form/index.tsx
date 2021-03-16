@@ -2,13 +2,13 @@
 import React from 'react'
 import './index.scss'
 
-interface HuxFormProps {
+interface uFormProps {
     [index: string]: any
 }
-const Form = (props: HuxFormProps) => {
+const Form = (props: uFormProps) => {
     const { children } = props
     return (
-        <div className="Hux-form">{children}</div>
+        <div className="u-form">{children}</div>
     )
 }
 

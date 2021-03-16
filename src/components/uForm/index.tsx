@@ -14,14 +14,14 @@ registerFormFields({
 
 registerVirtualBox('block', FormBlock)
 
-interface HuxFromProps {
+interface uFromProps {
     schema: ISchema,
     actions?: ISchemaFormActions,
     effects?: IFormEffect
 
 }
 
-export default (props: HuxFromProps) => {
+const LuvFrom = (props: uFromProps) => {
     const { schema, actions } = props
     console.log(schema, 'schema')
     return (
@@ -33,3 +33,4 @@ export default (props: HuxFromProps) => {
         />
     )
 }
+export default LuvFrom
