@@ -42,12 +42,12 @@ export const FormData = [
 ]
 
 export const FormDataValue = {
-    personalInformation: {
-        email: '111',
-        spouseName: '222'
-    },
-    currentAddress: {
-        addressDetail: '12',
-        contactNumber: '87'
-    }
+    // personalInformation: {
+    //     email: '111',
+    //     spouseName: '222'
+    // },
+    // currentAddress: {
+    //     addressDetail: '12',
+    //     contactNumber: '87'
+    // }
 }

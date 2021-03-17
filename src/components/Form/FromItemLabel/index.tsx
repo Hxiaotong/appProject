@@ -3,7 +3,7 @@ import './index.scss'
 import Input from '@/components/Form/Input'
 
 function LabelCard(props: any) {
-    const {filed, dataSource, getGroupData} = props
+    const {filed, dataSource = '', getGroupData} = props
     const formItemMap: any = {
         input: <Input filed={filed} dataSource={dataSource} getGroupData={getGroupData}></Input>
     }

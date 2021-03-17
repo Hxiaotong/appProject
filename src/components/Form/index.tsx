@@ -6,11 +6,11 @@ import Card from '@/components/Form/Card'
 export let getFormDataObj: any = {}
 
 const Form = (prop: any)=>{
-    const {filed, dataSource, children} = prop
+    const {filed, dataSource = {}, children} = prop
 
     const blockEle = (item: any) => {
         const blockTypeMap: any = {
-            card: <Card filed={item} dataSource={dataSource[item.name]} getFormData={getFormData}></Card>
+            card: <Card filed={item} dataSource={dataSource[item.name] || {}} getFormData={getFormData}></Card>
         }
         return blockTypeMap[item.type]
     }
