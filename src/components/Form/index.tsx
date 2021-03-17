@@ -1,15 +1,16 @@
 import React from 'react'
 import './index.scss'
 import Card from '@/components/Form/Card'
+// import formCheck from './formCheck.js'
 
-export let getFormDataObj = {}
+export let getFormDataObj: any = {}
 
 const Form = (prop: any)=>{
-    const {filed, children} = prop
+    const {filed, dataSource, children} = prop
 
     const blockEle = (item: any) => {
         const blockTypeMap: any = {
-            card: <Card filed={item} getFormData={getFormData}></Card>
+            card: <Card filed={item} dataSource={dataSource[item.name]} getFormData={getFormData}></Card>
         }
         return blockTypeMap[item.type]
     }
