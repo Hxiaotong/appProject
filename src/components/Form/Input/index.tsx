@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react'
 import './index.scss'
 
 function Form(props: any) {
+    const {filed, getGroupData} = props
     const [hasError, setHasError] = useState(false)
     const [value, setValue] = useState('')
 
@@ -14,6 +15,10 @@ function Form(props: any) {
             setHasError(false)
         }
         setValue(value)
+        var inputInfo = {
+            [filed['name']]: value
+        }
+        getGroupData(inputInfo)
     }
     return (
         <>
