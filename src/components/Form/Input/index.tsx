@@ -1,32 +1,45 @@
 // Form 控制全局表单样式
 import React, {useState, useEffect} from 'react'
 import './index.scss'
+import eventFn from '../event/index.js'
 
 function Form(props: any) {
-    const {filed, dataSource, getGroupData} = props
+    const {filed, rules = () => {}, dataSource, getGroupData} = props
     const [hasError, setHasError] = useState(false)
     const [value, setValue] = useState('')
     const [defaultValue, setDefaultValue] = useState(null)
 
     const onChange = (event:any) => {
         const value = event.target.value
-        if (value.replace(/\s/g, '').length < 11) {
-            setHasError(true)
-        } else {
-            setHasError(false)
-        }
+        checkValue()
         setValue(value)
         getGroupData({
             [filed['name']]: value
         })
+
     }
+    const checkValue = () => {
+        if (!rules(value)['isPass']) {
+            setHasError(true)
+        } else {
+            setHasError(false)
+        }
+    }
+    const showErrorTip = () => {
+        setHasError(true)
+    }
+
+    eventFn.on('addVla', (value: any) => {
+        checkValue()
+    });
+
     useEffect(()=>{
         setDefaultValue(dataSource)
         getGroupData({
             [filed['name']]: defaultValue
         })
     }, [defaultValue])
-    
+
     return (
         <>
             <div className="form-label-card-item input-component">
@@ -37,7 +50,7 @@ function Form(props: any) {
                         value={defaultValue || value}
                         onChange={onChange}/>
                 </div>
-                {hasError && (<span className="form-content-error">Please fill in the information in this box</span>)}
+                {hasError && (<span className="form-content-error">{rules(value)['errorText']}</span>)}
             </div>
         </>
     )

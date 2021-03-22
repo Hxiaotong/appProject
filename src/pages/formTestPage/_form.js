@@ -9,12 +9,14 @@ export const FormData = [
                 name: 'email',
                 label: 'Email*',
                 type: 'input',
+                rules: 'email',
                 required: true,
             },
             {
                 name: 'spouseName',
                 label: 'Spouse name*',
                 type: 'input',
+                rules: 'email',
                 required: true,
             }
         ]
@@ -29,12 +31,14 @@ export const FormData = [
                 name: 'addressDetail',
                 label: 'Address detail*',
                 type: 'input',
+                rules: 'email',
                 required: true,
             },
             {
                 name: 'contactNumber',
                 label: 'Contact number*',
                 type: 'input',
+                rules: 'email',
                 required: true,
             }
         ]

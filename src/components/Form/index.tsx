@@ -1,12 +1,15 @@
 import React from 'react'
 import './index.scss'
 import Card from '@/components/Form/Card'
-// import formCheck from './formCheck.js'
+import eventFn from './event/index.js'
 
-export let getFormDataObj: any = {}
+export let action = {
+    formData: {},
+    submit: eventFn
+}
 
 const Form = (prop: any)=>{
-    const {filed, dataSource = {}, children} = prop
+    const {filed = [], dataSource = {}, children, submit} = prop
 
     const blockEle = (item: any) => {
         const blockTypeMap: any = {
@@ -16,14 +19,14 @@ const Form = (prop: any)=>{
     }
 
     const getFormData = (value: any)=>{
-        getFormDataObj = {...getFormDataObj, ...value}
+        action.formData = {...action.formData, ...value}
     }
 
     return (
        <>
             <div>
                 {
-                    filed.length && filed.map((item: any, index: any) =>(
+                    filed.length > 0 && filed.map((item: any, index: any) =>(
                         <div key={index}>
                             <div className="form-card-title">{item.title}</div>
                             {blockEle(item)}
