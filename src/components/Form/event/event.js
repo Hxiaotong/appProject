@@ -5,7 +5,7 @@ class MyEvent {
 
   on(type, fn) {
     this.list[type] ? this.list[type].push(fn) : this.list[type] = [fn];
-  };
+  }
 
   emit(type, data) {
     if (this.list[type] && this.list[type].length > 0) {
@@ -13,7 +13,7 @@ class MyEvent {
         item(data);
       });
     }
-  };
+  }
 
   remove(type, fn) {
     if (fn) {

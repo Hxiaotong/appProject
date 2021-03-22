@@ -25,9 +25,6 @@ function Form(props: any) {
             setHasError(false)
         }
     }
-    const showErrorTip = () => {
-        setHasError(true)
-    }
 
     eventFn.on('addVla', (value: any) => {
         checkValue()
