@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './index.scss'
 import Card from '@/components/Form/Card'
 import eventFn from './event/index.js'
@@ -21,6 +21,12 @@ const Form = (prop: any)=>{
     const getFormData = (value: any)=>{
         action.formData = {...action.formData, ...value}
     }
+    
+    useEffect(() => {
+        return function cleanup() {
+            eventFn.remove('addVla');
+        };
+    })
 
     return (
        <>

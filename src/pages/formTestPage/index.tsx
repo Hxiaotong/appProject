@@ -6,7 +6,7 @@ import { FormData, FormDataValue } from './_form.js'
 
 const formTestPage = ()=> {
   const submit = () => {
-    action.submit.emit('addVla', {a: 1});
+    action.submit.emit('addVla');
   }
 
   return (
